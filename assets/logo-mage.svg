@@ -1,22 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" aria-label="MAGE Logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-label="MAGE Logo">
   <defs>
-    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#f4e4a6"/>
-      <stop offset="50%" style="stop-color:#d4af37"/>
-      <stop offset="100%" style="stop-color:#9a7b2a"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="1" result="blur"/>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="0.4" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-  <!-- Left wing -->
-  <path d="M8 40 Q0 20 12 8 Q20 16 24 28 Q18 24 8 40Z" fill="url(#gold)" opacity="0.9" class="wing-left"/>
-  <!-- Crown -->
-  <path d="M42 32 L52 18 L62 32 L72 18 L82 32 L72 42 L52 42 Z" fill="url(#gold)" filter="url(#glow)"/>
-  <circle cx="62" cy="22" r="3" fill="#1a0a0a"/>
-  <!-- MAGE text -->
-  <text x="92" y="38" font-family="Georgia, serif" font-size="36" font-weight="bold" fill="url(#gold)" letter-spacing="2">MAGE</text>
-  <!-- Right wing -->
-  <path d="M272 40 Q280 20 268 8 Q260 16 256 28 Q262 24 272 40Z" fill="url(#gold)" opacity="0.9" class="wing-right"/>
+  <!-- Pure black circular background -->
+  <circle cx="100" cy="100" r="98" fill="#000000" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <!-- Faint card corner / suit patterns (dark grey, behind text) -->
+  <g opacity="0.2" fill="none" stroke="#333" stroke-width="1">
+    <path d="M55 50 L65 50 L65 60" transform="rotate(-15 60 55)"/>
+    <path d="M135 48 L145 48 L145 58" transform="rotate(12 140 53)"/>
+    <path d="M50 140 L58 140 L58 148" transform="rotate(-20 54 144)"/>
+    <path d="M142 138 L150 138 L150 146" transform="rotate(18 146 142)"/>
+  </g>
+  <!-- Crown above M: hand-drawn, irregular, dripping -->
+  <path class="crown" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#softGlow)" d="
+    M58 58 Q68 38 78 50 Q88 36 100 48 Q112 36 122 50 Q132 38 142 58
+    L138 66 Q132 70 100 72 Q68 70 62 66 Z
+    M72 66 L72 70 M88 66 L88 71 M100 66 L100 71 M112 66 L112 71 M128 66 L128 70
+  "/>
+  <!-- Four small suits: spade, heart, club, diamond (above E / right of crown) -->
+  <g class="suits" fill="#fff" font-size="11" opacity="0.95">
+    <text x="128" y="42">♠</text>
+    <text x="138" y="46">♥</text>
+    <text x="148" y="42">♣</text>
+    <text x="158" y="46">♦</text>
+  </g>
+  <!-- Left wing (from M): hand-drawn simple -->
+  <path class="wing-left" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity="0.9" filter="url(#softGlow)" d="
+    M42 92 Q28 80 22 68 Q30 78 38 86 Q36 76 42 92 Z
+  "/>
+  <!-- Right wing (from E): hand-drawn simple -->
+  <path class="wing-right" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity="0.9" filter="url(#softGlow)" d="
+    M158 92 Q172 80 178 68 Q170 78 162 86 Q164 76 158 92 Z
+  "/>
+  <!-- MAGE: hand-drawn brush style, A = inverted V -->
+  <g class="mage-text" fill="#fff" filter="url(#softGlow)">
+    <!-- M: thick hand-drawn -->
+    <path d="M46 98 L46 76 L54 92 L62 76 L62 98" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- A: inverted V only (no crossbar) -->
+    <path d="M68 98 L80 76 L92 98" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- G: rounded -->
+    <path d="M100 76 Q108 76 112 84 Q112 94 104 98 Q96 98 96 90 Q96 84 102 86" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- E: blocky hand-drawn -->
+    <path d="M120 76 L120 98 M120 76 L136 76 M120 87 L130 87 M120 98 L136 98" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- Wavy hand-drawn underline beneath MAGE -->
+  <path class="underline" d="M46 114 Q62 118 78 112 Q94 118 110 112 Q126 118 142 112 Q158 118 154 114" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" opacity="0.9"/>
 </svg>

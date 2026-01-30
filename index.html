@@ -17,21 +17,19 @@
   <meta property="og:image" content="assets/og-cover.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <!-- Critical inline CSS so page always has dark theme even if style.css fails to load -->
   <style>
-    body{background:#0a0a0a!important;color:#f5f5f5!important;margin:0;font-family:Outfit,system-ui,sans-serif;}
-    a{color:#f4e4a6!important;text-decoration:none;}
-    a:hover{color:#d4af37!important;}
-    .cta,.btn-add{display:inline-block;padding:14px 28px;border-radius:8px;font-weight:600;cursor:pointer;transition:transform .2s;}
+    body{background:#000!important;color:#fff!important;margin:0;font-family:Outfit,system-ui,sans-serif;}
+    a{color:#fff!important;text-decoration:none;}
+    a:hover{opacity:.9;}
+    .cta,.btn-add{display:inline-block;padding:14px 28px;border-radius:6px;font-weight:600;cursor:pointer;transition:transform .2s;}
     .cta:hover,.btn-add:hover{transform:translateY(-2px);}
-    .cta-primary{background:#d4af37;color:#0a0a0a;}
-    .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px;position:relative;overflow:hidden;}
-    .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 120% 80% at 50% -20%,#2d1b4e 0%,transparent 50%),linear-gradient(180deg,#0a0a0a,#12121a);pointer-events:none;}
-    .hero-title{font-size:clamp(3rem,8vw,5rem);color:#d4af37!important;margin:0 0 8px;}
-    .hero-tagline{color:#f4e4a6;margin:0 0 4px;}
-    .nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:rgba(10,10,10,.9);border-bottom:1px solid rgba(212,175,55,.4);}
+    .cta-primary{background:#fff;color:#000;}
+    .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px;position:relative;overflow:hidden;background:#000;}
+    .hero-tagline{color:#fff;margin:0 0 4px;}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:rgba(0,0,0,.95);border-bottom:1px solid rgba(255,255,255,.15);}
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
@@ -45,17 +43,7 @@
   <!-- Navigation -->
   <nav class="nav" role="navigation">
     <a href="#hero" class="nav-logo" aria-label="MAGE Home">
-      <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" aria-label="MAGE">
-        <defs>
-          <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f4e4a6"/><stop offset="50%" stop-color="#d4af37"/><stop offset="100%" stop-color="#9a7b2a"/></linearGradient>
-          <filter id="glow"><feGaussianBlur stdDeviation="1" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-        </defs>
-        <path class="wing-left" d="M8 40 Q0 20 12 8 Q20 16 24 28 Q18 24 8 40Z" fill="url(#gold)" opacity="0.9"/>
-        <path d="M42 32 L52 18 L62 32 L72 18 L82 32 L72 42 L52 42 Z" fill="url(#gold)" filter="url(#glow)"/>
-        <circle cx="62" cy="22" r="3" fill="#1a0a0a"/>
-        <text x="92" y="38" font-family="Cinzel, Georgia, serif" font-size="36" font-weight="bold" fill="url(#gold)" letter-spacing="2">MAGE</text>
-        <path class="wing-right" d="M272 40 Q280 20 268 8 Q260 16 256 28 Q262 24 272 40Z" fill="url(#gold)" opacity="0.9"/>
-      </svg>
+      <img src="assets/logo-mage.svg" alt="MAGE" class="logo-svg" width="44" height="44">
     </a>
     <ul class="nav-links">
       <li><a href="#hero">Home</a></li>
@@ -66,23 +54,27 @@
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero Section: Magic opening -->
   <header id="hero" class="hero">
     <div class="hero-bg">
-      <div class="hero-gradient"></div>
+      <div class="hero-curtain" aria-hidden="true"></div>
       <div class="floating-cards" aria-hidden="true">
-        <div class="card-float c1">♠</div>
-        <div class="card-float c2">♥</div>
-        <div class="card-float c3">♣</div>
-        <div class="card-float c4">♦</div>
-        <div class="card-float c5">♠</div>
-        <div class="card-float c6">♥</div>
-        <div class="card-float c7">♦</div>
-        <div class="card-float c8">♣</div>
+        <span class="card-float c1">♠</span>
+        <span class="card-float c2">♥</span>
+        <span class="card-float c3">♣</span>
+        <span class="card-float c4">♦</span>
+        <span class="card-float c5">♠</span>
+        <span class="card-float c6">♥</span>
+        <span class="card-float c7">♦</span>
+        <span class="card-float c8">♣</span>
+      </div>
+    </div>
+    <div class="hero-magic">
+      <div class="hero-logo-wrap">
+        <img src="assets/logo-mage.svg" alt="MAGE" class="hero-logo" width="200" height="200">
       </div>
     </div>
     <div class="hero-content">
-      <h1 class="hero-title">MAGE</h1>
       <p class="hero-tagline">Where Magic Meets the Table.</p>
       <p class="hero-sub">Shuffle. Roll. Deal. Anywhere in Babson <span class="suit">♠</span></p>
       <div class="hero-ctas">
@@ -90,9 +82,6 @@
         <a href="#checkout" class="cta cta-secondary">Buy Now</a>
         <a href="#demo" class="cta cta-ghost">Watch Magic Demo</a>
       </div>
-    </div>
-    <div class="hero-gesture" aria-hidden="true">
-      <div class="hand-silhouette"></div>
     </div>
   </header>
 
@@ -200,12 +189,62 @@
     </div>
   </section>
 
-  <!-- Demo strip -->
+  <!-- See It In Action: mat details + cool on-mat action -->
   <section id="demo" class="demo-strip">
     <div class="container">
       <h2>See It In Action</h2>
-      <button id="rollBtn" class="cta">Roll the Mat</button>
-      <div class="mat-demo" role="img" aria-label="Poker mat roll demo"></div>
+      <p class="demo-intro">The MAGE Poker Mat — built for control, presence, and the moment.</p>
+
+      <div class="mat-details">
+        <div class="mat-detail-item">
+          <span class="mat-detail-icon">◆</span>
+          <span class="mat-detail-label">70×40cm</span>
+          <span class="mat-detail-desc">Campus size</span>
+        </div>
+        <div class="mat-detail-item">
+          <span class="mat-detail-icon">▣</span>
+          <span class="mat-detail-label">Non-slip base</span>
+          <span class="mat-detail-desc">Stays put</span>
+        </div>
+        <div class="mat-detail-item">
+          <span class="mat-detail-icon">◇</span>
+          <span class="mat-detail-label">Smooth surface</span>
+          <span class="mat-detail-desc">Shuffles & slides</span>
+        </div>
+        <div class="mat-detail-item">
+          <span class="mat-detail-icon">♠</span>
+          <span class="mat-detail-label">MAGE emblem</span>
+          <span class="mat-detail-desc">Center stage</span>
+        </div>
+      </div>
+
+      <div class="mat-stage-wrap">
+        <div class="mat-stage" role="img" aria-label="Poker mat with card flourish">
+          <div class="mat-surface">
+            <div class="mat-emblem">MAGE</div>
+            <div class="on-mat-action">
+              <div class="card-fan">
+                <span class="fan-card" style="--i:0">♠</span>
+                <span class="fan-card" style="--i:1">♥</span>
+                <span class="fan-card" style="--i:2">♣</span>
+                <span class="fan-card" style="--i:3">♦</span>
+                <span class="fan-card" style="--i:4">♠</span>
+                <span class="fan-card" style="--i:5">♥</span>
+                <span class="fan-card" style="--i:6">♣</span>
+                <span class="fan-card" style="--i:7">♦</span>
+              </div>
+              <div class="chip-stack">
+                <span class="chip c1"></span>
+                <span class="chip c2"></span>
+                <span class="chip c3"></span>
+                <span class="chip c4"></span>
+                <span class="chip c5"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="mat-stage-caption">Card flourish + chip stack on the mat — bullet time.</p>
+      </div>
     </div>
   </section>
 
@@ -222,8 +261,13 @@
         </div>
         <div class="story-social">
           <h3>MAGE Community</h3>
-          <div class="social-embed">
-            <p class="embed-placeholder">Follow <strong>@MAGE</strong> for drops, demos, and game night vibes.</p>
+          <div class="social-embed profile-card">
+            <img src="assets/logo-mage.svg" alt="MAGE" class="profile-logo" width="80" height="80">
+            <div class="profile-info">
+              <strong class="profile-name">MAGE</strong>
+              <p class="profile-stats">1 post · 83 followers · 106 following</p>
+              <p class="profile-slogan">Shuffle. Roll. Deal. Anywhere in Babson <span class="suit">♠</span></p>
+            </div>
             <div class="social-links">
               <a href="#" aria-label="Instagram">Instagram</a>
               <a href="#" aria-label="TikTok">TikTok</a>
@@ -305,17 +349,7 @@
 
   <footer class="footer">
     <div class="container">
-      <svg class="footer-logo logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" aria-label="MAGE">
-        <defs>
-          <linearGradient id="goldFooter" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f4e4a6"/><stop offset="50%" stop-color="#d4af37"/><stop offset="100%" stop-color="#9a7b2a"/></linearGradient>
-          <filter id="glowFooter"><feGaussianBlur stdDeviation="1" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-        </defs>
-        <path class="wing-left" d="M8 40 Q0 20 12 8 Q20 16 24 28 Q18 24 8 40Z" fill="url(#goldFooter)" opacity="0.9"/>
-        <path d="M42 32 L52 18 L62 32 L72 18 L82 32 L72 42 L52 42 Z" fill="url(#goldFooter)" filter="url(#glowFooter)"/>
-        <circle cx="62" cy="22" r="3" fill="#1a0a0a"/>
-        <text x="92" y="38" font-family="Cinzel, Georgia, serif" font-size="36" font-weight="bold" fill="url(#goldFooter)" letter-spacing="2">MAGE</text>
-        <path class="wing-right" d="M272 40 Q280 20 268 8 Q260 16 256 28 Q262 24 272 40Z" fill="url(#goldFooter)" opacity="0.9"/>
-      </svg>
+      <img src="assets/logo-mage.svg" alt="MAGE" class="footer-logo" width="56" height="56">
       <p>Shuffle. Roll. Deal. Anywhere in Babson <span class="suit">♠</span></p>
       <p class="copyright">© 2025 MAGE</p>
       <div class="social">
