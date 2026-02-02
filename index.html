@@ -1,412 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <base href="https://elliesong111-ai.github.io/MAGE/">
-  <title>MAGE — Where Magic Meets the Table</title>
-  <meta name="description" content="MAGE — Shuffle. Roll. Deal. Anywhere in Babson. Premium magical cards and poker mats for cardists, magicians, and game nights.">
-  <link rel="canonical" href="https://elliesong111-ai.github.io/MAGE/">
-  <meta name="robots" content="index, follow">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
-  <link rel="apple-touch-icon" href="assets/favicon.png">
-  <meta property="og:title" content="MAGE — Where Magic Meets the Table">
-  <meta property="og:description" content="Shuffle. Roll. Deal. Anywhere in Babson. Premium mats and cards.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://elliesong111-ai.github.io/MAGE/">
-  <meta property="og:image" content="assets/og-cover.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=2">
-  <!-- Critical inline CSS so page always has dark theme even if style.css fails to load -->
-  <style>
-    body{background:#000!important;color:#fff!important;margin:0;font-family:Outfit,system-ui,sans-serif;}
-    a{color:#fff!important;text-decoration:none;}
-    a:hover{opacity:.9;}
-    .cta,.btn-add{display:inline-block;padding:14px 28px;border-radius:6px;font-weight:600;cursor:pointer;transition:transform .2s;}
-    .cta:hover,.btn-add:hover{transform:translateY(-2px);}
-    .cta-primary{background:#fff;color:#000;}
-    .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px;position:relative;overflow:hidden;background:#000;}
-    .hero-tagline{color:#fff;margin:0 0 4px;}
-    .nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:rgba(0,0,0,.95);border-bottom:1px solid rgba(255,255,255,.15);}
-  </style>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX');
-  </script>
-</head>
-<body>
-  <!-- Navigation -->
-  <nav class="nav" role="navigation">
-    <a href="#hero" class="nav-logo" aria-label="MAGE Home">
-      <img src="assets/logo-mage.png" alt="MAGE" class="logo-svg" width="44" height="44" onerror="this.src='assets/logo-mage.svg'">
-    </a>
-    <ul class="nav-links">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#shop">Shop</a></li>
-      <li><a href="#story">Story</a></li>
-      <li><a href="#checkout">Checkout</a></li>
-    </ul>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  </nav>
-
-  <!-- Hero Section: Tap to begin → burst → logo → content -->
-  <header id="hero" class="hero">
-    <div class="hero-tap-overlay" id="heroTapOverlay" role="button" tabindex="0" aria-label="Start">
-      <span class="hero-tap-suits">♠ ♥ ♣ ♦</span>
-      <span class="hero-tap-text">TAP TO BEGIN</span>
-      <span class="hero-tap-sub">the magic</span>
-      <span class="hero-tap-hint">click or tap anywhere</span>
-    </div>
-    <div class="hero-bg">
-      <div class="hero-vignette" aria-hidden="true"></div>
-      <div class="hero-curtain" aria-hidden="true"></div>
-      <div class="floating-cards" aria-hidden="true">
-        <span class="card-float c1" data-suit="♠">♠</span>
-        <span class="card-float c2" data-suit="♥">♥</span>
-        <span class="card-float c3" data-suit="♣">♣</span>
-        <span class="card-float c4" data-suit="♦">♦</span>
-        <span class="card-float c5" data-suit="♠">♠</span>
-        <span class="card-float c6" data-suit="♥">♥</span>
-        <span class="card-float c7" data-suit="♦">♦</span>
-        <span class="card-float c8" data-suit="♣">♣</span>
-        <span class="card-float c9" data-suit="♠">♠</span>
-        <span class="card-float c10" data-suit="♥">♥</span>
-      </div>
-    </div>
-    <div class="hero-magic">
-      <div class="hero-logo-wrap">
-        <div class="hero-logo-parallax">
-          <img src="assets/logo-mage.png" alt="MAGE" class="hero-logo" width="200" height="200" onerror="this.src='assets/logo-mage.svg'">
-        </div>
-      </div>
-    </div>
-    <div class="hero-content">
-      <p class="hero-tagline">Where Magic Meets the Table.</p>
-      <p class="hero-sub">Shuffle. Roll. Deal. Anywhere in Babson <span class="suit">♠</span></p>
-      <div class="hero-ctas">
-        <a href="#shop" class="cta cta-primary">Explore Cards</a>
-        <a href="#checkout" class="cta cta-secondary">Buy Now</a>
-        <a href="#demo" class="cta cta-ghost">Watch Magic Demo</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Shop Section -->
-  <section id="shop" class="section shop">
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Editopia - 自动剪辑工作流</title>
+    <style>
+      body {
+        font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+        margin: 0;
+        padding: 40px;
+        background: #0f1115;
+        color: #e7e7e7;
+      }
+      .container {
+        max-width: 820px;
+        margin: 0 auto;
+      }
+      .hero {
+        padding: 24px 0 8px 0;
+      }
+      h1 {
+        margin-bottom: 8px;
+      }
+      .card {
+        background: #171a21;
+        border: 1px solid #2a2f3a;
+        border-radius: 12px;
+        padding: 20px;
+        margin-top: 20px;
+      }
+      .pill {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid #2a2f3a;
+        margin-right: 8px;
+        font-size: 12px;
+        color: #b8c7dd;
+      }
+      ul {
+        padding-left: 18px;
+      }
+      code {
+        display: block;
+        background: #0b0d12;
+        padding: 12px;
+        border-radius: 8px;
+        overflow-x: auto;
+        color: #d1e7ff;
+      }
+      a {
+        color: #7ab7ff;
+      }
+    </style>
+  </head>
+  <body>
     <div class="container">
-      <h2 class="section-title">Products · Magical Cards & Poker Mats</h2>
-      <p class="section-intro">Premium decks and mats designed for cardists, magicians, and poker nights. From dorm rooms to late-night games.</p>
-
-      <div class="shop-category">
-        <h3 class="category-title">Magical Cards</h3>
-        <div class="product-grid">
-          <article class="product-card" data-product="signature">
-            <div class="product-visual">
-              <div class="card-3d">
-                <div class="card-face front"></div>
-                <div class="card-face back"></div>
-              </div>
-            </div>
-            <div class="product-info">
-              <span class="product-badge">Standard Deck</span>
-              <h4>MAGE Signature Deck · Black & Gold</h4>
-              <p class="product-desc">A workhorse deck tuned for magic and cardistry. Smooth yet controlled finish, black-and-gold back that glows under light.</p>
-              <p class="magician-quote">"Best feel for flourishes—not too slippery, not too stiff." — Campus Magician</p>
-              <p class="product-price">$19</p>
-              <button type="button" class="btn-add" data-sku="signature" data-name="Signature Deck" data-price="19">Add to Order</button>
-            </div>
-          </article>
-          <article class="product-card" data-product="phantom">
-            <div class="product-visual">
-              <div class="card-3d phantom-deck">
-                <div class="card-face front"></div>
-                <div class="card-face back"></div>
-              </div>
-            </div>
-            <div class="product-info">
-              <span class="product-badge">Special Edition</span>
-              <h4>MAGE Phantom Deck · Arcane Purple</h4>
-              <p class="product-desc">Deep black stock with subtle purple and gold. Flowing light bands when you fan or spring the cards.</p>
-              <p class="magician-quote">"Low-light rooms and late-night games—this deck shines." — Magic Club</p>
-              <p class="product-price">$24</p>
-              <button type="button" class="btn-add" data-sku="phantom" data-name="Phantom Deck" data-price="24">Add to Order</button>
-            </div>
-          </article>
+      <div class="hero">
+        <h1>Editopia</h1>
+        <p>脚本驱动的自动剪辑工作流：输入脚本即可生成成片，支持自动配图、BGM、字幕与配音。</p>
+        <div>
+          <span class="pill">16:9</span>
+          <span class="pill">1–5 分钟</span>
+          <span class="pill">多风格模板</span>
+          <span class="pill">本地离线</span>
         </div>
       </div>
-
-      <div class="shop-category">
-        <h3 class="category-title">Poker Mats</h3>
-        <div class="product-grid">
-          <article class="product-card mat-card" data-product="campus">
-            <div class="product-visual mat-visual">
-              <img src="assets/mat.svg" alt="Campus Edition mat">
-            </div>
-            <div class="product-info">
-              <span class="product-badge">Compact</span>
-              <h4>MAGE Poker Mat · Campus Edition</h4>
-              <p class="product-desc">Built for dorm desks and small setups. Soft, smooth surface; non-slip base. Centered MAGE emblem.</p>
-              <p class="product-spec">Size: 70cm × 40cm</p>
-              <p class="magician-quote">"Every game felt more serious—in the best way." — Babson Player</p>
-              <p class="product-price">$39</p>
-              <button type="button" class="btn-add" data-sku="campus-mat" data-name="Campus Poker Mat" data-price="39">Add to Order</button>
-            </div>
-          </article>
-          <article class="product-card mat-card" data-product="night-raid">
-            <div class="product-visual mat-visual">
-              <img src="assets/mat.svg" alt="Night Raid mat">
-            </div>
-            <div class="product-info">
-              <span class="product-badge">Extended</span>
-              <h4>MAGE Poker Mat · Night Raid</h4>
-              <p class="product-desc">Darker, dramatic mat for longer sessions. Reinforced edges; tuned for cards and chips.</p>
-              <p class="product-spec">Size: 90cm × 45cm</p>
-              <p class="magician-quote">"When you put this on the table, everyone asks where it's from." — Game Night Host</p>
-              <p class="product-price">$49</p>
-              <button type="button" class="btn-add" data-sku="night-raid-mat" data-name="Night Raid Poker Mat" data-price="49">Add to Order</button>
-            </div>
-          </article>
-        </div>
+      <div class="card">
+        <h2>你可以做什么</h2>
+        <ul>
+          <li>脚本一键成片：自动分段、配图、字幕</li>
+          <li>自动 BGM 混音 + 可选 TTS 配音</li>
+          <li>多风格输出：节奏快切片 / 解说型 / 教程型 / 混剪型</li>
+          <li>智能配图：关键词、同义词、分类与图片标签加权</li>
+        </ul>
       </div>
-
-      <div class="shop-bundles">
-        <h3 class="category-title">Bundles</h3>
-        <div class="product-grid">
-          <article class="product-card bundle-card">
-            <div class="product-info">
-              <span class="product-badge">Starter</span>
-              <h4>MAGE Starter Set · First Table</h4>
-              <p class="product-desc">One Signature Deck + one Campus Poker Mat. Upgrade from random cards on a bare desk.</p>
-              <p class="product-price">$59</p>
-              <button type="button" class="btn-add" data-sku="starter" data-name="Starter Set" data-price="59">Add to Order</button>
-            </div>
-          </article>
-          <article class="product-card bundle-card">
-            <div class="product-info">
-              <span class="product-badge">Host Setup</span>
-              <h4>MAGE Pro Table · Game Night Host</h4>
-              <p class="product-desc">Two decks + one Night Raid Mat. For the default game spot. Everyone knows the night is on.</p>
-              <p class="product-price">$89</p>
-              <button type="button" class="btn-add" data-sku="pro-table" data-name="Pro Table Bundle" data-price="89">Add to Order</button>
-            </div>
-          </article>
-        </div>
+      <div class="card">
+        <h2>快速开始</h2>
+        <code>
+python auto-editor/auto_editor.py --script "C:\path\script.txt" --bg-dir "C:\path\images" --bgm "C:\path\bgm.mp3" --output "C:\path\out.mp4"
+        </code>
+      </div>
+      <div class="card">
+        <h2>智能配图（示例）</h2>
+        <code>
+python auto-editor/auto_editor.py --script "C:\path\script.txt" --bg-dir "C:\path\images" --keyword-dict "C:\path\keywords.json" --category-map "C:\path\categories.json" --image-tags "C:\path\image-tags.json" --output "C:\path\out.mp4"
+        </code>
+      </div>
+      <div class="card">
+        <h2>仓库</h2>
+        <p>请查看项目源码与使用说明：</p>
+        <p><a href="https://github.com/elliesong111-ai/vediopidia">GitHub 仓库</a></p>
       </div>
     </div>
-  </section>
-
-  <!-- See It In Action: mat details + cool on-mat action -->
-  <section id="demo" class="demo-strip">
-    <div class="container">
-      <h2>See It In Action</h2>
-      <p class="demo-intro">The MAGE Poker Mat — built for control, presence, and the moment.</p>
-
-      <div class="mat-details">
-        <div class="mat-detail-item">
-          <span class="mat-detail-icon">◆</span>
-          <span class="mat-detail-label">70×40cm</span>
-          <span class="mat-detail-desc">Campus size</span>
-        </div>
-        <div class="mat-detail-item">
-          <span class="mat-detail-icon">▣</span>
-          <span class="mat-detail-label">Non-slip base</span>
-          <span class="mat-detail-desc">Stays put</span>
-        </div>
-        <div class="mat-detail-item">
-          <span class="mat-detail-icon">◇</span>
-          <span class="mat-detail-label">Smooth surface</span>
-          <span class="mat-detail-desc">Shuffles & slides</span>
-        </div>
-        <div class="mat-detail-item">
-          <span class="mat-detail-icon">♠</span>
-          <span class="mat-detail-label">MAGE emblem</span>
-          <span class="mat-detail-desc">Center stage</span>
-        </div>
-      </div>
-
-      <div class="mat-stage-wrap">
-        <div class="mat-stage" role="img" aria-label="Poker mat with card flourish">
-          <div class="mat-surface">
-            <div class="mat-emblem">MAGE</div>
-            <div class="on-mat-action">
-              <div class="card-fan">
-                <span class="fan-card" style="--i:0">♠</span>
-                <span class="fan-card" style="--i:1">♥</span>
-                <span class="fan-card" style="--i:2">♣</span>
-                <span class="fan-card" style="--i:3">♦</span>
-                <span class="fan-card" style="--i:4">♠</span>
-                <span class="fan-card" style="--i:5">♥</span>
-                <span class="fan-card" style="--i:6">♣</span>
-                <span class="fan-card" style="--i:7">♦</span>
-              </div>
-              <div class="chip-stack">
-                <span class="chip c1"></span>
-                <span class="chip c2"></span>
-                <span class="chip c3"></span>
-                <span class="chip c4"></span>
-                <span class="chip c5"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p class="mat-stage-caption">Card flourish + chip stack on the mat — bullet time.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Story / Trust Section -->
-  <section id="story" class="section story">
-    <div class="container">
-      <h2 class="section-title">Story · MAGE and the Table</h2>
-      <div class="story-grid">
-        <div class="story-content">
-          <h3>Born from late-night games at Babson</h3>
-          <p>MAGE started with a small group of friends at Babson who cared way too much about how the table felt. Some of us were into magic, some into poker, some into design—but we all agreed: the right cards and the right mat change the whole energy of the night.</p>
-          <p>We stopped settling for whatever was available and began prototyping our own. We tested paper stock, finishes, thickness, and mat materials with real players, in real games, in real dorm rooms and apartments.</p>
-          <p>Every deck and mat you see here is the result of that iteration. When you put MAGE on the table, you're not just placing a product—you're setting the tone for the entire session.</p>
-        </div>
-        <div class="story-social">
-          <h3>MAGE Community</h3>
-          <div class="social-embed profile-card">
-            <img src="assets/logo-mage.png" alt="MAGE" class="profile-logo" width="80" height="80" onerror="this.src='assets/logo-mage.svg'">
-            <div class="profile-info">
-              <strong class="profile-name">MAGE</strong>
-              <p class="profile-stats">1 post · 83 followers · 106 following</p>
-              <p class="profile-slogan">Shuffle. Roll. Deal. Anywhere in Babson <span class="suit">♠</span></p>
-            </div>
-            <div class="social-links">
-              <a href="#" aria-label="Instagram">Instagram</a>
-              <a href="#" aria-label="TikTok">TikTok</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonials">
-        <h3>What Magicians & Players Say</h3>
-        <div class="testimonial-carousel">
-          <div class="testimonial-slide">
-            <blockquote>"The first time we used a MAGE mat in the dorm, everyone asked where it was from."</blockquote>
-            <cite>— Babson Game Night</cite>
-          </div>
-          <div class="testimonial-slide">
-            <blockquote>"The deck feels perfect for flourishes—not too slippery, not too stiff. Even the sound of shuffles hits different."</blockquote>
-            <cite>— Campus Cardist</cite>
-          </div>
-          <div class="testimonial-slide">
-            <blockquote>"Once we had a dedicated mat, every game felt more serious—in the best way."</blockquote>
-            <cite>— Poker Club</cite>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Checkout Section -->
-  <section id="checkout" class="section checkout">
-    <div class="container checkout-container">
-      <h2 class="section-title">Checkout · Build Your MAGE Setup</h2>
-      <p class="section-intro">Secure checkout. We accept WeChat Pay, Alipay, PayPal, and major credit cards.</p>
-      <div class="checkout-layout">
-        <div class="checkout-form-wrap">
-          <form id="checkoutForm" class="checkout-form">
-            <fieldset class="checkout-fieldset">
-              <legend>Shipping Details</legend>
-              <label>Full Name <input type="text" name="name" required placeholder="Your name"></label>
-              <label>Email <input type="email" name="email" required placeholder="you@example.com"></label>
-              <label>Address <input type="text" name="address" required placeholder="Street, City, State, ZIP"></label>
-              <label>Country
-                <select name="country" id="country" required>
-                  <option value="">Select country</option>
-                  <option value="US">United States</option>
-                  <option value="CN">China</option>
-                  <option value="other">Other</option>
-                </select>
-              </label>
-            </fieldset>
-            <fieldset class="checkout-fieldset">
-              <legend>Options</legend>
-              <label class="checkbox-label"><input type="checkbox" name="gift_wrap" id="giftWrap"> Gift packaging (+$5)</label>
-              <label class="checkbox-label"><input type="checkbox" name="magician_bundle"> Magician recommended bundle (best value)</label>
-            </fieldset>
-            <fieldset class="checkout-fieldset payment-fieldset">
-              <legend>Payment Method</legend>
-              <div class="payment-methods">
-                <label class="payment-option"><input type="radio" name="payment" value="wechat"> <span class="pay-icon">WeChat</span></label>
-                <label class="payment-option"><input type="radio" name="payment" value="alipay"> <span class="pay-icon">Alipay</span></label>
-                <label class="payment-option"><input type="radio" name="payment" value="paypal"> <span class="pay-icon">PayPal</span></label>
-                <label class="payment-option"><input type="radio" name="payment" value="card"> <span class="pay-icon">Credit Card</span></label>
-              </div>
-            </fieldset>
-            <button type="submit" class="cta cta-submit" id="placeOrderBtn">Place Order</button>
-          </form>
-        </div>
-        <aside class="checkout-summary">
-          <div class="summary-box">
-            <h3>Order Summary</h3>
-            <div id="cartItems" class="cart-items"></div>
-            <div class="summary-row"><span>Subtotal</span><span id="subtotal">$0</span></div>
-            <div class="summary-row"><span>Shipping</span><span id="shipping">Calculated at next step</span></div>
-            <div class="summary-row total"><span>Total</span><span id="total">$0</span></div>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      <img src="assets/logo-mage.png" alt="MAGE" class="footer-logo" width="56" height="56" onerror="this.src='assets/logo-mage.svg'">
-      <p>Shuffle. Roll. Deal. Anywhere in Babson <span class="suit">♠</span></p>
-      <p class="copyright">© 2025 MAGE</p>
-      <div class="social">
-        <a href="#" aria-label="Instagram">Instagram</a>
-        <a href="#" aria-label="TikTok">TikTok</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Payment notice modal (after Place Order) -->
-  <div id="paymentModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="paymentModalTitle" aria-hidden="true">
-    <div class="modal-content modal-shop">
-      <button class="close payment-close" aria-label="Close">&times;</button>
-      <h2 id="paymentModalTitle">Payment</h2>
-      <p class="payment-notice">Online payment is not connected yet. Your order has been saved.</p>
-      <p class="payment-options">To complete your order now:</p>
-      <ul class="payment-list">
-        <li><a href="mailto:magecards7@gmail.com?subject=MAGE%20Order">Email us</a> with your cart and shipping details</li>
-        <li>DM <strong>@MAGE</strong> on Instagram</li>
-      </ul>
-      <p class="payment-soon">We’ll add WeChat Pay, Alipay, and card payments soon.</p>
-      <button type="button" class="cta primary" id="paymentModalOk">OK</button>
-    </div>
-  </div>
-
-  <!-- Add to Cart Modal (quick add) -->
-  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
-    <div class="modal-content modal-shop">
-      <button class="close" aria-label="Close">&times;</button>
-      <h2 id="modalTitle">Add to Order</h2>
-      <div id="toast" class="toast" style="display:none;">Added to cart!</div>
-      <form id="buyForm">
-        <input type="hidden" id="quickSku" name="sku">
-        <label class="label">Product <span id="quickName"></span></label>
-        <label class="label">Quantity
-          <div class="stepper">
-            <button type="button" id="minus" aria-label="Decrease">−</button>
-            <input id="qty" type="number" min="1" value="1" aria-label="Quantity">
-            <button type="button" id="plus" aria-label="Increase">+</button>
-          </div>
-        </label>
-        <button type="submit" class="cta primary">Add to Cart</button>
-      </form>
-    </div>
-  </div>
-
-  <script src="script.js?v=2"></script>
-</body>
+  </body>
 </html>
