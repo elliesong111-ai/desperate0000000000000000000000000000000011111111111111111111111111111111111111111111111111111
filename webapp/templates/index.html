@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Editopia Online</title>
+    <style>
+      body {
+        font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+        background: #0f1115;
+        color: #e7e7e7;
+        margin: 0;
+        padding: 32px;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .card {
+        background: #171a21;
+        border: 1px solid #2a2f3a;
+        border-radius: 12px;
+        padding: 18px;
+        margin-top: 18px;
+      }
+      label {
+        display: block;
+        margin: 12px 0 6px;
+      }
+      textarea,
+      input[type="text"],
+      input[type="number"],
+      input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #2a2f3a;
+        background: #0b0d12;
+        color: #e7e7e7;
+      }
+      button {
+        margin-top: 16px;
+        padding: 10px 16px;
+        border-radius: 8px;
+        border: 0;
+        background: #2f6fed;
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      small {
+        color: #b8c7dd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Editopia 在线剪辑（MVP）</h1>
+      <p>输入脚本并上传素材，点击生成即可下载视频。</p>
+
+      <form class="card" action="/api/generate" method="post" enctype="multipart/form-data">
+        <label>脚本内容</label>
+        <textarea name="script_text" rows="6" placeholder="请粘贴脚本内容"></textarea>
+
+        <div class="row">
+          <div>
+            <label>背景色</label>
+            <input type="text" name="bg_color" value="black" />
+          </div>
+          <div>
+            <label>每秒字数</label>
+            <input type="number" step="0.1" name="cps" value="6" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label>背景图 Zip（可选）</label>
+            <input type="file" name="bg_zip" accept=".zip" />
+          </div>
+          <div>
+            <label>单张背景图（可选）</label>
+            <input type="file" name="bg_image" accept=".png,.jpg,.jpeg,.webp" />
+          </div>
+        </div>
+
+        <label>BGM 文件（可选）</label>
+        <input type="file" name="bgm_file" accept=".mp3,.wav,.aac,.m4a,.ogg" />
+
+        <div class="row">
+          <div>
+            <label>字幕每行最大字数</label>
+            <input type="number" name="subtitle_max_len" value="22" />
+          </div>
+          <div>
+            <label>BGM 音量</label>
+            <input type="number" step="0.1" name="bgm_volume" value="0.3" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label>配音音量（预留）</label>
+            <input type="number" step="0.1" name="voice_volume" value="1.0" />
+          </div>
+          <div>
+            <label>分类加权</label>
+            <input type="number" step="0.1" name="category_boost" value="2.0" />
+          </div>
+        </div>
+
+        <label>标签加权</label>
+        <input type="number" step="0.1" name="tag_boost" value="2.0" />
+
+        <label>关键词词典 JSON（可选）</label>
+        <input type="file" name="keyword_dict" accept=".json" />
+
+        <label>分类词典 JSON（可选）</label>
+        <input type="file" name="category_map" accept=".json" />
+
+        <label>图片标签 JSON（可选）</label>
+        <input type="file" name="image_tags" accept=".json" />
+
+        <small>提示：生成依赖本机 ffmpeg 和 python。</small>
+        <button type="submit">生成并下载</button>
+      </form>
+    </div>
+  </body>
+</html>
