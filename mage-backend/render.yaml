@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: mage-payment-backend
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: SQUARE_ACCESS_TOKEN
+        sync: false
+      - key: SQUARE_LOCATION_ID
+        sync: false
+      - key: SQUARE_ENVIRONMENT
+        value: sandbox

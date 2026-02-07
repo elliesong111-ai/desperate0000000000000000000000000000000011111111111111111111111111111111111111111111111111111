@@ -349,22 +349,96 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ----- Checkout form -----
+  // Backend API URL (update this after deploying to Render)
+  const PAYMENT_API_URL = 'https://mage-payment-backend.onrender.com';
+
   const checkoutForm = document.getElementById('checkoutForm');
   if (checkoutForm) {
-    checkoutForm.addEventListener('submit', (e) => {
+    checkoutForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const cart = getCart();
       if (cart.length === 0) {
         showToast('Your cart is empty. Add items from Shop.');
         return;
       }
-      const paymentModal = document.getElementById('paymentModal');
-      if (paymentModal) {
-        paymentModal.style.display = 'flex';
-        paymentModal.setAttribute('aria-hidden', 'false');
-      } else {
-        showToast('Order received! Payment coming soon — contact us to complete.');
+
+      const placeOrderBtn = document.getElementById('placeOrderBtn');
+      const originalText = placeOrderBtn ? placeOrderBtn.textContent : 'Place Order';
+
+      // Get form data
+      const formData = new FormData(checkoutForm);
+      const customer = {
+        name: formData.get('name') || '',
+        email: formData.get('email') || '',
+        address: formData.get('address') || '',
+      };
+
+      // Calculate shipping
+      const countrySelect = document.getElementById('country');
+      const country = countrySelect ? countrySelect.value : '';
+      let subtotal = 0;
+      cart.forEach(item => { subtotal += (item.price || 0) * (item.qty || 1); });
+      let shipping = 0;
+      if (country === 'US') shipping = subtotal >= 75 ? 0 : 8;
+      else if (country === 'CN') shipping = subtotal >= 100 ? 0 : 12;
+      else if (country && country !== '') shipping = 15;
+
+      const giftWrapEl = document.getElementById('giftWrap');
+      const giftWrap = giftWrapEl ? giftWrapEl.checked : false;
+
+      // Show loading state
+      if (placeOrderBtn) {
+        placeOrderBtn.textContent = 'Processing...';
+        placeOrderBtn.disabled = true;
       }
+
+      try {
+        const response = await fetch(`${PAYMENT_API_URL}/create-checkout`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            cart: cart,
+            shipping: shipping,
+            gift_wrap: giftWrap,
+            customer: customer,
+          }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.checkout_url) {
+          // Clear cart and redirect to Square checkout
+          track('checkout_redirect', { total: subtotal + shipping + (giftWrap ? 5 : 0) });
+          window.location.href = data.checkout_url;
+        } else {
+          // Show error or fallback to manual payment modal
+          console.error('Checkout error:', data);
+          const paymentModal = document.getElementById('paymentModal');
+          if (paymentModal) {
+            paymentModal.style.display = 'flex';
+            paymentModal.setAttribute('aria-hidden', 'false');
+          } else {
+            showToast('Payment system unavailable. Please contact us to complete your order.');
+          }
+        }
+      } catch (err) {
+        console.error('Checkout fetch error:', err);
+        // Fallback to manual payment modal
+        const paymentModal = document.getElementById('paymentModal');
+        if (paymentModal) {
+          paymentModal.style.display = 'flex';
+          paymentModal.setAttribute('aria-hidden', 'false');
+        } else {
+          showToast('Payment system unavailable. Please contact us to complete your order.');
+        }
+      } finally {
+        // Restore button state
+        if (placeOrderBtn) {
+          placeOrderBtn.textContent = originalText;
+          placeOrderBtn.disabled = false;
+        }
+      }
+
       track('checkout_submit');
     });
   }
