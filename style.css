@@ -196,11 +196,29 @@ body {
 .hero-tap-suit:nth-child(2) { right: 0; top: 50%; transform: translate(50%, -50%); }
 .hero-tap-suit:nth-child(3) { left: 50%; bottom: 0; transform: translate(-50%, 50%); }
 .hero-tap-suit:nth-child(4) { left: 0; top: 50%; transform: translate(-50%, -50%); }
+.hero-tap-logo {
+  position: relative;
+  z-index: 1;
+  width: clamp(180px, 35vw, 320px);
+  height: auto;
+  filter: drop-shadow(0 0 20px rgba(255,255,255,0.8)) drop-shadow(0 0 40px rgba(255,255,255,0.5)) drop-shadow(0 0 80px rgba(255,255,255,0.3));
+  animation: tapLogoPulse 1.2s ease-in-out infinite;
+  transition: transform 0.25s ease, filter 0.25s ease;
+  margin-bottom: 20px;
+}
+@keyframes tapLogoPulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 20px rgba(255,255,255,0.8)) drop-shadow(0 0 40px rgba(255,255,255,0.5)); }
+  50% { transform: scale(1.04); filter: drop-shadow(0 0 30px rgba(255,255,255,1)) drop-shadow(0 0 60px rgba(255,255,255,0.7)); }
+}
+.hero-tap-overlay:hover .hero-tap-logo {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 30px rgba(255,255,255,1)) drop-shadow(0 0 60px rgba(255,255,255,0.8)) drop-shadow(0 0 100px rgba(255,255,255,0.5));
+}
 .hero-tap-text {
   position: relative;
   z-index: 1;
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
   font-weight: 700;
   color: var(--white);
   letter-spacing: 0.25em;
