@@ -37,6 +37,13 @@ body {
   border-bottom: 1px solid var(--border-white);
 }
 .nav-logo { display: flex; align-items: center; }
+.nav-brand {
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
 .nav-logo .logo-svg {
   height: 44px;
   width: 44px;
@@ -159,18 +166,7 @@ body {
   opacity: 0;
 }
 .hero-tap-overlay::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 2px solid rgba(255,255,255,0.2);
-  border-radius: 50%;
-  width: 80vmin;
-  height: 80vmin;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  animation: tapRing 2s ease-in-out infinite;
-  box-shadow: 0 0 30px rgba(255,255,255,0.1), inset 0 0 60px rgba(255,255,255,0.03);
+  content: none;
 }
 @keyframes tapRing {
   0%, 100% { transform: translate(-50%, -50%) scale(0.92); opacity: 0.6; }
@@ -196,25 +192,6 @@ body {
 .hero-tap-suit:nth-child(2) { right: 0; top: 50%; transform: translate(50%, -50%); }
 .hero-tap-suit:nth-child(3) { left: 50%; bottom: 0; transform: translate(-50%, 50%); }
 .hero-tap-suit:nth-child(4) { left: 0; top: 50%; transform: translate(-50%, -50%); }
-.hero-tap-logo {
-  position: relative;
-  z-index: 1;
-  width: clamp(180px, 35vw, 320px);
-  height: auto;
-  border-radius: 12px;
-  filter: drop-shadow(0 0 20px rgba(255,255,255,0.5)) drop-shadow(0 0 40px rgba(255,255,255,0.3));
-  animation: tapLogoPulse 1.2s ease-in-out infinite;
-  transition: transform 0.25s ease, filter 0.25s ease;
-  margin-bottom: 20px;
-}
-@keyframes tapLogoPulse {
-  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 20px rgba(255,255,255,0.5)) drop-shadow(0 0 40px rgba(255,255,255,0.3)); }
-  50% { transform: scale(1.04); filter: drop-shadow(0 0 30px rgba(255,255,255,0.7)) drop-shadow(0 0 60px rgba(255,255,255,0.5)); }
-}
-.hero-tap-overlay:hover .hero-tap-logo {
-  transform: scale(1.08);
-  filter: drop-shadow(0 0 30px rgba(255,255,255,0.8)) drop-shadow(0 0 60px rgba(255,255,255,0.6));
-}
 .hero-tap-text {
   position: relative;
   z-index: 1;
