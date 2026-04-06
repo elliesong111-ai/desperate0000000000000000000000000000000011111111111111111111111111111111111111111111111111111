@@ -1,0 +1,112 @@
+{
+  "value_questions": [
+    {
+      "id": "value_1",
+      "prompt": "Which leaves a deeper mark in a room?",
+      "options": ["Betrayal", "Control"]
+    },
+    {
+      "id": "value_2",
+      "prompt": "Which is harder to forgive once people feel it?",
+      "options": ["A retreat that comes too late", "A certainty that never bends"]
+    },
+    {
+      "id": "value_3",
+      "prompt": "What makes a person less believable over time?",
+      "options": ["Protecting themselves too quickly", "Holding their position too tightly"]
+    },
+    {
+      "id": "value_4",
+      "prompt": "Which is more dangerous in public?",
+      "options": ["Needing to be believed", "Needing to stay in control"]
+    }
+  ],
+  "self_revealing": [
+    {
+      "id": "self_1",
+      "prompt": "When someone unsettles you, what changes first?",
+      "options": ["I go colder", "I go clearer"]
+    },
+    {
+      "id": "self_2",
+      "prompt": "When pressure turns toward you, what is harder to protect?",
+      "options": ["Your stability", "Your credibility"]
+    },
+    {
+      "id": "self_3",
+      "prompt": "When doubt starts to form, what feels riskier?",
+      "options": ["Speaking before it settles", "Waiting for it to settle"]
+    },
+    {
+      "id": "self_4",
+      "prompt": "When the room shifts, what do you trust less?",
+      "options": ["Your first read", "Your last adjustment"]
+    }
+  ],
+  "people_reading": [
+    {
+      "id": "people_1",
+      "prompt": "Who is harder to place under scrutiny?",
+      "options": ["Someone who never changes", "Someone who changes too quickly"]
+    },
+    {
+      "id": "people_2",
+      "prompt": "What reads as more dangerous in a tense room?",
+      "options": ["Calm certainty", "Careful unreadability"]
+    },
+    {
+      "id": "people_3",
+      "prompt": "What makes someone feel more exposed?",
+      "options": ["Answering too fast", "Answering too cleanly"]
+    },
+    {
+      "id": "people_4",
+      "prompt": "Who becomes harder to trust late in the room?",
+      "options": ["Someone who never softens", "Someone who softens at the wrong time"]
+    }
+  ],
+  "room_dynamics": [
+    {
+      "id": "room_1",
+      "prompt": "What unsettles a room faster?",
+      "options": ["One very certain person", "Several hesitant people"]
+    },
+    {
+      "id": "room_2",
+      "prompt": "What changes a room more quickly?",
+      "options": ["A visible revision", "A silence that lasts too long"]
+    },
+    {
+      "id": "room_3",
+      "prompt": "What keeps a room from settling?",
+      "options": ["Too many private doubts", "One public line held too firmly"]
+    },
+    {
+      "id": "room_4",
+      "prompt": "What makes a center feel unstable?",
+      "options": ["It formed too early", "It held for too long"]
+    }
+  ],
+  "commitment_pressure": [
+    {
+      "id": "pressure_1",
+      "prompt": "What costs more in front of others?",
+      "options": ["Being wrong confidently", "Seeming inconsistent"]
+    },
+    {
+      "id": "pressure_2",
+      "prompt": "What becomes visible faster under scrutiny?",
+      "options": ["Certainty", "Hesitation"]
+    },
+    {
+      "id": "pressure_3",
+      "prompt": "What is riskier once the room tightens?",
+      "options": ["Staying where you started", "Moving when everyone can see it"]
+    },
+    {
+      "id": "pressure_4",
+      "prompt": "What is harder to recover from late?",
+      "options": ["Softening too late", "Never softening at all"]
+    }
+  ]
+}

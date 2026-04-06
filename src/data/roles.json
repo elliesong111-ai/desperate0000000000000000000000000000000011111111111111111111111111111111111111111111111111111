@@ -1,0 +1,66 @@
+[
+  {
+    "id": "objective_1",
+    "name": "Stay Believable",
+    "description": "Keep your position feeling intentional from start to finish.",
+    "goal": "Do not become too easy for the room to place.",
+    "hint": "A line can steady you. It can also begin to glow.",
+    "evaluator": "remainBelievable"
+  },
+  {
+    "id": "objective_2",
+    "name": "Avoid The Early Center",
+    "description": "Stay out of the room's center before pressure peaks.",
+    "goal": "Let attention gather elsewhere first.",
+    "hint": "If the room settles on you too early, it is hard to leave.",
+    "evaluator": "avoidEarlyCenter"
+  },
+  {
+    "id": "objective_3",
+    "name": "Keep It Unsettled",
+    "description": "You benefit if the room never fully closes around one read.",
+    "goal": "Reach the end with no truly stable center.",
+    "hint": "A split room can still feel believable.",
+    "evaluator": "keepFragmented"
+  },
+  {
+    "id": "objective_4",
+    "name": "Invite Movement",
+    "description": "You benefit when more than one person has to reconsider.",
+    "goal": "Leave the room with visible revisions in the air.",
+    "hint": "If nobody moves, everyone becomes easier to place.",
+    "evaluator": "inviteRevisions"
+  },
+  {
+    "id": "objective_5",
+    "name": "Stay Hard To Place",
+    "description": "Do not let the room settle too cleanly around you.",
+    "goal": "Remain difficult to read through the end.",
+    "hint": "Unreadable is not absent. It is unresolved.",
+    "evaluator": "stayUnreadable"
+  },
+  {
+    "id": "objective_6",
+    "name": "Carry Scrutiny",
+    "description": "If attention lands on you, carry it without hardening.",
+    "goal": "Absorb pressure without looking rigid.",
+    "hint": "The room watches how you hold pressure, not just whether you face it.",
+    "evaluator": "surviveScrutiny"
+  },
+  {
+    "id": "objective_7",
+    "name": "Let The Room Move First",
+    "description": "You benefit when the room shifts around you before you shift yourself.",
+    "goal": "Stay just outside the center while the room keeps moving.",
+    "hint": "Sometimes the safest place is near the center, but not inside it.",
+    "evaluator": "letRoomShiftAroundYou"
+  },
+  {
+    "id": "objective_8",
+    "name": "Turn Without Breaking",
+    "description": "If you move, the move still has to feel earned.",
+    "goal": "Make a late turn that still feels believable.",
+    "hint": "A visible turn can steady you or expose you.",
+    "evaluator": "believableAfterShift"
+  }
+]

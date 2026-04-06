@@ -1,0 +1,623 @@
+:root {
+  --bg: #090b10;
+  --bg-soft: #11141b;
+  --surface: #141922;
+  --surface-2: #1c2230;
+  --surface-3: #232b3a;
+  --border: rgba(255, 255, 255, 0.09);
+  --text-primary: #f3f5f8;
+  --text-secondary: #a9b2c2;
+  --text-muted: #697284;
+  --success: #9ed8c0;
+  --danger: #f3b1b1;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
+  font-size: 16px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  min-height: 100%;
+  background: radial-gradient(circle at top, #171d29 0%, var(--bg) 52%);
+  color: var(--text-primary);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button, input, textarea {
+  font: inherit;
+}
+
+.screen {
+  min-height: 100dvh;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 24px 20px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.btn {
+  width: 100%;
+  border: none;
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: transform 0.14s ease, opacity 0.14s ease, border-color 0.14s ease;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.btn:active {
+  transform: scale(0.985);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn--primary {
+  background: var(--text-primary);
+  color: #0b0e13;
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.btn--text {
+  background: transparent;
+  color: var(--text-secondary);
+}
+
+.btn--phase {
+  background: var(--phase-text);
+  color: var(--phase-color);
+}
+
+.btn-back {
+  align-self: flex-start;
+  background: transparent;
+  color: var(--text-secondary);
+  border: none;
+  cursor: pointer;
+}
+
+.screen-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.screen-title {
+  font-size: 30px;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.screen-subtitle {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.screen--landing {
+  justify-content: space-between;
+}
+
+.landing-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.landing-eyebrow,
+.mode-card-time,
+.phase-number,
+.phase-label,
+.vote-eyebrow,
+.results-section-label,
+.role-badge,
+.role-goal-label,
+.role-hint-label,
+.field-label,
+.status-label,
+.prompt-question-type,
+.record-state,
+.role-pass-label {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.landing-title {
+  font-size: clamp(72px, 20vw, 108px);
+  line-height: 0.88;
+  letter-spacing: -0.08em;
+  margin: 20px 0 28px;
+}
+
+.landing-tagline {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 18rem;
+}
+
+.landing-footer,
+.setup-footer,
+.results-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.landing-note,
+.setup-note,
+.mode-note,
+.vote-pass-note,
+.role-pass-note,
+.record-state,
+.status-copy,
+.results-subtitle,
+.results-player-note,
+.results-room-text {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.mode-cards,
+.player-inputs,
+.choice-grid,
+.results-path {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mode-card,
+.player-input-row,
+.choice-card,
+.status-panel,
+.results-room-card,
+.results-player-card {
+  background: rgba(20, 25, 34, 0.88);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.mode-card {
+  text-align: left;
+  padding: 22px 20px;
+  position: relative;
+}
+
+.mode-card-name {
+  font-size: 24px;
+  margin: 8px 0;
+}
+
+.mode-card-desc {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 22rem;
+}
+
+.mode-card-arrow {
+  position: absolute;
+  top: 22px;
+  right: 20px;
+  color: var(--text-muted);
+}
+
+.player-input-row {
+  align-items: center;
+  display: flex;
+  gap: 14px;
+  padding: 14px 16px;
+}
+
+.player-number {
+  color: var(--text-muted);
+  width: 18px;
+}
+
+.player-input,
+.text-input {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-primary);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+
+.player-input {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.player-input::placeholder,
+.text-input::placeholder {
+  color: var(--text-muted);
+}
+
+.screen--role-pass,
+.screen--role-reveal,
+.screen--vote-pass {
+  justify-content: space-between;
+}
+
+.role-pass-content,
+.vote-pass-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.role-pass-title,
+.vote-pass-title {
+  font-size: 20px;
+  color: var(--text-secondary);
+}
+
+.role-pass-name,
+.vote-pass-name {
+  font-size: clamp(36px, 10vw, 44px);
+  letter-spacing: -0.05em;
+}
+
+.role-reveal-content,
+.phase-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  flex: 1;
+}
+
+.screen--role-reveal,
+.screen--phase {
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.role-description {
+  font-size: 24px;
+  line-height: 1.35;
+  letter-spacing: -0.03em;
+}
+
+.role-divider {
+  height: 1px;
+  background: var(--border);
+}
+
+.role-goal,
+.role-hint,
+.phase-subtitle,
+.phase-room-text,
+.phase-question-text,
+.results-player-summary,
+.results-read-line {
+  line-height: 1.7;
+}
+
+.phase-mood {
+  font-size: clamp(42px, 12vw, 58px);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.phase-instruction {
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--phase-text);
+  opacity: 0.94;
+}
+
+.phase-room-condition,
+.phase-question-preview {
+  padding: 16px;
+  border-radius: var(--radius);
+  background: rgba(0, 0, 0, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.phase-room-label {
+  margin-bottom: 6px;
+}
+
+.phase-room-name,
+.results-room-name {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.phase-question-label {
+  font-size: 12px;
+  color: var(--phase-text);
+  opacity: 0.75;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.screen--prompt,
+.screen--results {
+  justify-content: flex-start;
+}
+
+.prompt-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.prompt-phase-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--phase-color);
+}
+
+.prompt-meta {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 12px;
+}
+
+.prompt-type {
+  color: var(--phase-text);
+}
+
+.prompt-progress {
+  color: var(--text-muted);
+}
+
+.prompt-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.prompt-text {
+  font-size: clamp(24px, 6vw, 30px);
+  line-height: 1.35;
+  letter-spacing: -0.04em;
+}
+
+.prompt-question-panel,
+.status-panel {
+  padding: 16px;
+}
+
+.status-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.status-panel--subtle {
+  margin-top: -4px;
+  background: rgba(255, 255, 255, 0.025);
+  border-radius: var(--radius);
+  box-shadow: none;
+}
+
+.status-panel--preview {
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: none;
+}
+
+.status-value {
+  font-size: 17px;
+}
+
+.choice-card {
+  padding: 16px 18px;
+  text-align: left;
+  color: var(--text-primary);
+  background: var(--surface);
+}
+
+.choice-card--stacked {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.choice-card-title {
+  font-size: 18px;
+}
+
+.choice-card-note {
+  color: var(--text-secondary);
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.choice-card.selected,
+.commitment-chip.selected {
+  border-color: rgba(255, 255, 255, 0.24);
+  background: var(--surface-3);
+}
+
+.choice-card:disabled,
+.commitment-chip:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.choice-grid--players .choice-card {
+  font-size: 18px;
+}
+
+.field-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.text-input--area {
+  resize: vertical;
+  min-height: 116px;
+}
+
+.commitment-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.commitment-chip {
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-primary);
+  padding: 10px 14px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.prompt-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.prompt-players {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.prompt-player-chip {
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  padding: 7px 12px;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.prompt-player-chip.active {
+  color: var(--phase-text);
+  border-color: transparent;
+  background: var(--phase-color);
+}
+
+.results-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.results-title {
+  font-size: clamp(38px, 10vw, 48px);
+  letter-spacing: -0.06em;
+}
+
+.results-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.results-read-line {
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+}
+
+.results-prompt-pair {
+  display: grid;
+  gap: 12px;
+}
+
+.results-prompt-card {
+  padding: 16px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.results-soft-label {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.results-vote-row,
+.results-player-row,
+.results-path-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.results-vote-label,
+.results-path-label {
+  color: var(--text-secondary);
+}
+
+.results-vote-name,
+.results-path-value,
+.results-player-name {
+  text-align: right;
+}
+
+.results-player-card {
+  padding: 16px;
+  gap: 12px;
+}
+
+.results-player-summary {
+  margin: 4px 0;
+}
+
+@media (max-width: 420px) {
+  .screen {
+    padding-inline: 16px;
+  }
+
+  .commitment-row {
+    flex-direction: column;
+  }
+
+  .results-vote-row,
+  .results-player-row,
+  .results-path-row {
+    flex-direction: column;
+  }
+
+  .results-vote-name,
+  .results-path-value,
+  .results-player-name {
+    text-align: left;
+  }
+}
