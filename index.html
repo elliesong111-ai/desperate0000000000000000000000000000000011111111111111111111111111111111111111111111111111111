@@ -1,97 +1,22 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Editopia - 自动剪辑工作流</title>
-    <style>
-      body {
-        font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
-        margin: 0;
-        padding: 40px;
-        background: #0f1115;
-        color: #e7e7e7;
-      }
-      .container {
-        max-width: 820px;
-        margin: 0 auto;
-      }
-      .hero {
-        padding: 24px 0 8px 0;
-      }
-      h1 {
-        margin-bottom: 8px;
-      }
-      .card {
-        background: #171a21;
-        border: 1px solid #2a2f3a;
-        border-radius: 12px;
-        padding: 20px;
-        margin-top: 20px;
-      }
-      .pill {
-        display: inline-block;
-        padding: 6px 10px;
-        border-radius: 999px;
-        border: 1px solid #2a2f3a;
-        margin-right: 8px;
-        font-size: 12px;
-        color: #b8c7dd;
-      }
-      ul {
-        padding-left: 18px;
-      }
-      code {
-        display: block;
-        background: #0b0d12;
-        padding: 12px;
-        border-radius: 8px;
-        overflow-x: auto;
-        color: #d1e7ff;
-      }
-      a {
-        color: #7ab7ff;
-      }
-    </style>
+    <link rel="icon" type="image/svg+xml" href="/desperate0000000000000000000000000000000011111111111111111111111111111111111111111111111111111/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#090b10" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta
+      name="description"
+      content="Center Hold is a restrained psychological judgment game about credibility, pressure, revision, and unstable room dynamics."
+    />
+    <title>Center Hold</title>
+    <script type="module" crossorigin src="/desperate0000000000000000000000000000000011111111111111111111111111111111111111111111111111111/assets/index-CFYaex9G.js"></script>
+    <link rel="stylesheet" crossorigin href="/desperate0000000000000000000000000000000011111111111111111111111111111111111111111111111111111/assets/index-BUaUhcIw.css">
   </head>
   <body>
-    <div class="container">
-      <div class="hero">
-        <h1>Editopia</h1>
-        <p>脚本驱动的自动剪辑工作流：输入脚本即可生成成片，支持自动配图、BGM、字幕与配音。</p>
-        <div>
-          <span class="pill">16:9</span>
-          <span class="pill">1–5 分钟</span>
-          <span class="pill">多风格模板</span>
-          <span class="pill">本地离线</span>
-        </div>
-      </div>
-      <div class="card">
-        <h2>你可以做什么</h2>
-        <ul>
-          <li>脚本一键成片：自动分段、配图、字幕</li>
-          <li>自动 BGM 混音 + 可选 TTS 配音</li>
-          <li>多风格输出：节奏快切片 / 解说型 / 教程型 / 混剪型</li>
-          <li>智能配图：关键词、同义词、分类与图片标签加权</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h2>快速开始</h2>
-        <code>
-python auto-editor/auto_editor.py --script "C:\path\script.txt" --bg-dir "C:\path\images" --bgm "C:\path\bgm.mp3" --output "C:\path\out.mp4"
-        </code>
-      </div>
-      <div class="card">
-        <h2>智能配图（示例）</h2>
-        <code>
-python auto-editor/auto_editor.py --script "C:\path\script.txt" --bg-dir "C:\path\images" --keyword-dict "C:\path\keywords.json" --category-map "C:\path\categories.json" --image-tags "C:\path\image-tags.json" --output "C:\path\out.mp4"
-        </code>
-      </div>
-      <div class="card">
-        <h2>仓库</h2>
-        <p>请查看项目源码与使用说明：</p>
-        <p><a href="https://github.com/elliesong111-ai/vediopidia">GitHub 仓库</a></p>
-      </div>
-    </div>
+    <div id="root"></div>
   </body>
 </html>
